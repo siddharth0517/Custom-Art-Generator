@@ -32,14 +32,8 @@ num_steps = st.slider("Image Quality (More steps take longer)", 20, 100, 50, ste
 if st.button("Generate Artwork"):
     if prompt:
         with st.spinner("Creating your masterpiece..."):
-            # Extend functionality: Add negative prompt
-            negative_prompt = st.text_input("Enter what you want to avoid (e.g., 'blurry, dark')")
-            if negative_prompt:
-                image = pipe(prompt, negative_prompt=negative_prompt, guidance_scale=guidance_scale, num_inference_steps=num_steps).images[0]
-            else:
-                image = pipe(prompt, guidance_scale=guidance_scale, num_inference_steps=num_steps).images[0]
-
-            # image = pipe(prompt, guidance_scale=guidance_scale, num_inference_steps=num_steps).images[0]
+            
+            image = pipe(prompt, guidance_scale=guidance_scale, num_inference_steps=num_steps).images[0]
             st.image(image, caption="Generated Artwork", use_column_width=True)
             
             # Save the generated image
