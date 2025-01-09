@@ -1,0 +1,19 @@
+# Core dependencies
+torch
+transformers
+diffusers
+accelerate
+
+# Web application framework
+streamlit
+
+# Image handling and visualization
+pillow
+matplotlib
+
+# Optional: For handling uploaded files or additional features
+numpy
+opencv-python  # If you use image preprocessing with OpenCV
+
+# Ensure CUDA compatibility (optional)
+torchvision
